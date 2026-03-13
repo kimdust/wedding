@@ -1,7 +1,7 @@
 function Contact() {
   return (
-    <section>
-      <h2>연락처</h2>
+    <section className="contact">
+      <h2>CONTACT</h2>
     </section>
   )
 }
