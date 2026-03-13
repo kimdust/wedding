@@ -15,11 +15,6 @@ function Footer() {
     }, []);
 
     const handleKakaoShare = () => {
-        if (!window.Kakao) {
-            alert("카카오 SDK가 로드되지 않았습니다.");
-            return;
-        }
-
         window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
