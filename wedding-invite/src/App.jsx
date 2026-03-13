@@ -4,6 +4,7 @@ import Gallery from "./components/Gallery"
 import Gift from "./components/Gift"
 import Location from "./components/Location"
 import Contact from "./components/Contact"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Location />
         <Gift />
         <Contact />
+        <Footer />
       </div>
     </div>
   )

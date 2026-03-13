@@ -595,9 +595,7 @@ section h2 {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition:
-        max-height 0.35s ease,
-        opacity 0.25s ease;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
 }
 
 .account_content.open {
@@ -606,14 +604,14 @@ section h2 {
 }
 
 .account_content_inner {
-    padding-top: 8px;
+    padding-top: 12px;
 }
 
 .account_line {
     width: 100%;
     height: 0.5px;
     background-color: #d6d6d6;
-    margin: 0 0 8px 0;
+    margin-bottom: 12px;
 }
 
 .account_info {
@@ -629,7 +627,7 @@ section h2 {
 }
 
 .account_btn_wrap {
-    margin-top: 8px;
+    margin-top: 12px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 8px;
@@ -660,5 +658,90 @@ section h2 {
 /* contact */
 .contact {
     margin-top: 120px;
-    padding: 0 20px;
+    padding: 0 40px;
+}
+
+.contact_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.contact_item img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.contact_btn {
+    width: 100%;
+    border: 0.2px solid #e7e7e7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.man_contact {
+    background-color: #EFF5F8;
+}
+
+.woman_contact {
+    background-color: #FFF7F3;
+}
+
+.contact_btn img {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* footer */
+.footer {
+    margin-top: 120px;
+}
+
+.share_wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+}
+
+.share_btn {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.share_btn img {
+    width: 12px;
+    height: 12px;
+}
+
+.share_line {
+    width: 0.5px;
+    height: 14px;
+    background-color: #d6d6d6;
+}
+
+.last_comment {
+    margin: 24px 0 40px;
 }
