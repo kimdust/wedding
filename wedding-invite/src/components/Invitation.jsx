@@ -1,9 +1,11 @@
-import calendar from "../assets/images/calendar.png"
+import Calendar from "../components/Calendar";
+import Countdown from "../components/Countdown";
 
 function Invitation() {
   return (
     <section className="invitation">
       <h2>INVITATION</h2>
+
       <div className="intro">
         <p>
           나의 생애는
@@ -11,10 +13,12 @@ function Invitation() {
           모든 지름길을 돌아서
           <br />
           네게로 난 단 하나의 에움길이었다.
-          </p>
-          <span>푸른 밤, 나희덕</span>
+        </p>
+        <span>푸른 밤, 나희덕</span>
       </div>
+
       <div className="line"></div>
+
       <div className="name">
         <div className="name_item">
           <p>이병저 ∙ 김혜경</p>
@@ -27,17 +31,21 @@ function Invitation() {
           <strong>김민지</strong>
         </div>
       </div>
+
       <div className="line"></div>
+
       <div className="calendar">
         <p>
           2026년 11월 28일(토) 14시
           <br />
           <strong>벨라루체 서울 7F 플로체홀</strong>
         </p>
-        <img src={calendar} alt="calendar" />
+        <Calendar />
       </div>
+
+      <Countdown />
     </section>
-  )
+  );
 }
 
-export default Invitation
+export default Invitation;
