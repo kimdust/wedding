@@ -3,7 +3,7 @@ import kakaoIcon from "../assets/icons/kakaopay.png";
 import copyIcon from "../assets/icons/copy.png";
 
 function Footer() {
-    const shareUrl = window.location.href;
+    const shareUrl = "https://kimdust.me/wedding/";
 
     useEffect(() => {
         if (!window.Kakao) return;
