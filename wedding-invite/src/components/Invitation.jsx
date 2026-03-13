@@ -1,9 +1,15 @@
 import Calendar from "../components/Calendar";
 import Countdown from "../components/Countdown";
+import arrowDown from "../assets/icons/arrow-down.png";
 
 function Invitation() {
   return (
     <section className="invitation">
+      <div className="hero_scroll_motion">
+        <img src={arrowDown} alt="scroll" />
+        <p>SCROLL</p>
+      </div>
+
       <h2>INVITATION</h2>
 
       <div className="intro">

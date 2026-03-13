@@ -1,7 +1,7 @@
 function Gift() {
   return (
     <section>
-      <h2>Gift</h2>
+      <h2>A Gift of Love</h2>
     </section>
   )
 }

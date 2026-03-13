@@ -7,13 +7,15 @@ import Contact from "./components/Contact"
 
 function App() {
   return (
-    <div className="container">
+    <div className="page">
       <Hero />
-      <Invitation />
-      <Gallery />
-      <Gift />
-      <Location />
-      <Contact />
+      <div className="content">
+        <Invitation />
+        <Gallery />
+        <Location />
+        <Gift />
+        <Contact />
+      </div>
     </div>
   )
 }
