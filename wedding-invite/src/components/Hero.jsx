@@ -1,5 +1,4 @@
 import heroImage from "../assets/images/hero.png"
-import heroScrollBg from "../assets/images/hero-scroll-bg.png"
 import arrowDown from "../assets/icons/arrow-down.png"
 
 function Hero() {
@@ -10,7 +9,7 @@ function Hero() {
                 <br />
                 Married
             </h1>
-            <div className="hero-scroll" style={{ backgroundImage: `url(${heroScrollBg})` }}>
+            <div className="hero-scroll">
                 <img src={arrowDown} alt="scroll" />
                 <p>SCROLL</p>
             </div>

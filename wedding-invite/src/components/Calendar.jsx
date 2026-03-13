@@ -1,3 +1,5 @@
+import heartIcon from "../assets/icons/heart.png"
+
 export default function Calendar() {
     const days = ['S','M','T','W','T','F','S'];
     const dates = [
@@ -22,7 +24,7 @@ export default function Calendar() {
             <div key={i} className={`date ${d===28 ? 'wedding' : ''}`}>
                 {d && (
                 <>
-                    {d===28 && <div className="heart">❤</div>}
+                    {d===28 && <div className="heart"><img src={heartIcon} alt="heart" /></div>}
                     {d}
                 </>
                 )}

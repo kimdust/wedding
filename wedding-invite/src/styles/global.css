@@ -92,6 +92,7 @@ section {
 }
 
 section h2 {
+    font-size: 12px;
     font-weight: 500;
     color: #B0B0B0;
     margin-bottom: 40px;
@@ -102,7 +103,7 @@ section h2 {
 .hero {
     height: 100vh;
     background-size: cover;
-    background-position: center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -121,7 +122,7 @@ section h2 {
 
 .hero-scroll {
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-size: 100% 100%;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -176,7 +177,7 @@ section h2 {
 
 .invitation .line {
     width: 10vw;
-    height: 0.2px;
+    height: 0.5px;
     background-color: #d6d6d6;
     margin: 80px 0;
 }
@@ -248,10 +249,12 @@ section h2 {
 
 .heart {
     position: absolute;
-    top: -2px;
-    font-size: 10px;
-    line-height: 1;
-    color: #EF8700;
+    top: -7px;
+}
+
+.heart img {
+    width: 12px;
+    height: 12px;
 }
 
 .countdown_wrap {
@@ -280,12 +283,12 @@ section h2 {
 }
 
 .num {
-    font-size: 24px;
+    font-size: 22px;
     color: #444444;
 }
 
 .colon {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 2px;
     font-weight: 300;
     color: #B0B0B0;
