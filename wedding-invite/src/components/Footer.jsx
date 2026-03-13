@@ -4,6 +4,7 @@ import copyIcon from "../assets/icons/copy.png";
 
 function Footer() {
     const shareUrl = "https://kimdust.me/wedding/";
+    const shareImageUrl = "https://kimdust.me/wedding/wedding-preview.jpg";
 
     useEffect(() => {
         if (!window.Kakao) return;
@@ -14,14 +15,17 @@ function Footer() {
     }, []);
 
     const handleKakaoShare = () => {
-        if (!window.Kakao) return;
+        if (!window.Kakao) {
+            alert("카카오 SDK가 로드되지 않았습니다.");
+            return;
+        }
 
         window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
             title: "이상훈 ❤️ 김민지 결혼식에 초대합니다",
             description: "2026년 11월 28일, 벨라루체 서울",
-            imageUrl: `${window.location.origin}/wedding-preview.jpg`,
+            imageUrl: shareImageUrl,
             link: {
             mobileWebUrl: shareUrl,
             webUrl: shareUrl
