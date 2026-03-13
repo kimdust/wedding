@@ -25,6 +25,7 @@ const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img
 export default function Gallery() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const visibleImages = isExpanded ? images : images.slice(0, 6);
 
   const openModal = (index) => {
     setSelectedIndex(index);
@@ -67,7 +68,7 @@ export default function Gallery() {
         <h2>GALLERY</h2>
 
         <div className={`gallery_wrap ${!isExpanded ? "collapsed" : ""}`}>
-          {images.map((image, index) => (
+          {visibleImages.map((image, index) => (
             <button
               type="button"
               key={index}
@@ -79,7 +80,7 @@ export default function Gallery() {
           ))}
         </div>
 
-        {!isExpanded && images.length > 3 && (
+        {!isExpanded && images.length > 6 && (
           <button
             type="button"
             className="gallery_more"
