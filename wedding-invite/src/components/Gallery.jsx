@@ -1,4 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import arrowDown from "../assets/icons/arrow-down.png";
 import arrowLeft from "../assets/icons/arrow-left.png";
 import arrowRight from "../assets/icons/arrow-right.png";
@@ -20,11 +23,19 @@ import img13 from "../assets/images/gallery/gallery13.jpg";
 import img14 from "../assets/images/gallery/gallery14.jpg";
 import img15 from "../assets/images/gallery/gallery15.jpg";
 
-const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15];
+gsap.registerPlugin(ScrollTrigger);
+
+const images = [
+  img1, img2, img3, img4, img5,
+  img6, img7, img8, img9, img10,
+  img11, img12, img13, img14, img15
+];
 
 export default function Gallery() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const sectionRef = useRef(null);
+
   const visibleImages = isExpanded ? images : images.slice(0, 6);
 
   const openModal = (index) => {
@@ -50,6 +61,32 @@ export default function Gallery() {
   };
 
   useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        sectionRef.current,
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            // markers: true,
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = (e) => {
       if (selectedIndex === null) return;
 
@@ -64,7 +101,10 @@ export default function Gallery() {
 
   return (
     <>
-      <section className={`gallery ${!isExpanded ? "is-collapsed" : ""}`}>
+      <section
+        ref={sectionRef}
+        className={`gallery ${!isExpanded ? "is-collapsed" : ""}`}
+      >
         <h2>GALLERY</h2>
 
         <div className={`gallery_wrap ${!isExpanded ? "collapsed" : ""}`}>

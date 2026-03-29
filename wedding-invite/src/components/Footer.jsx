@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import kakaoIcon from "../assets/icons/kakaopay.png";
 import copyIcon from "../assets/icons/copy.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function Footer() {
+    const sectionRef = useRef(null);
     const shareUrl = "https://kimdust.me/wedding/";
     const shareImageUrl = "https://kimdust.me/wedding/wedding-preview.jpg";
 
@@ -45,10 +51,36 @@ function Footer() {
         } catch {
             alert("복사에 실패했습니다.");
         }
-        };
+    };
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+        gsap.fromTo(
+            sectionRef.current,
+            {
+            y: 50,
+            opacity: 0,
+            },
+            {
+            y: 0,
+            opacity: 1,
+            duration: 0.9,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 85%",
+                toggleActions: "play none none none",
+                // markers: true,
+            },
+            }
+        );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
 
     return (
-        <section className="footer">
+        <section className="footer" ref={sectionRef}>
             <div className="share_wrap">
                 <button
                 className="share_btn kakao_share"

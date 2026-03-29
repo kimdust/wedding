@@ -1,6 +1,11 @@
 @font-face {
-    font-family: "La-Paloma";
-    src: url("../assets/fonts/La-Paloma.woff2") format("woff2");
+    font-family: "TuesdayNight";
+    src: url("../assets/fonts/TuesdayNight.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "NewYork";
+    src: url("../assets/fonts/NewYork.woff2") format("woff2");
 }
 
 @font-face {
@@ -76,30 +81,20 @@
     font-size: 16px;
     line-height: 1.4;
     letter-spacing: -0.4px;
-    color: #1E1E1E;
+    color: #333;
 }
 
 body {
-    background-color: #FFFCF5;
-    text-align: center;
+    background-color: #FBFBF9;
 }
 
-.page {
-    position: relative;
-}
-
-.content {
-    position: relative;
-    z-index: 1;
-    background-color: #FFFCF5;
-}
 
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #FFFCF5;
+    background-color: #FBFBF9;
 }
 
 section h2 {
@@ -111,110 +106,57 @@ section h2 {
 
 
 /* Hero */
-.hero_bg_layer {
-    height: 680px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.hero_inner {
-    position: relative;
-    height: 680px;
+.hero {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    height: 100vh;
+    padding: 60px;
 }
 
-.hero_inner h1 {
-    font-family: "La-Paloma";
-    font-size: 32px;
-    color: #fff;
-    line-height: 2;
+.hero_img {
+    width: 100%;
+}
+
+.hero_title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero_title_font1 {
+    font-size: 44px;
+    font-family: "NewYork";
+}
+
+.hero_title_font2 {
+    font-size: 44px;
+    font-family: "TuesdayNight";
+    margin: -10px 0 -10px -10px;
+    color: #1D6D23;
 }
 
 
 /* Invitation */
-.invitation {
-    position: relative;
-    margin-top: -10px;
-    padding-top: 90px;
-    background: #FFFCF5;
-    z-index: 2;
-}
-
-.invitation::before {
-    content: "";
-    position: absolute;
-    top: -90px;
-    left: 0;
+.invitation_txt {
     width: 100%;
-    height: 100px;
-    background: url("../assets/images/hero-scroll-bg.png") no-repeat center top;
-    background-size: 100% 100%;
-    z-index: 1;
-}
-
-.hero_scroll_motion {
-    position: absolute;
-    top: -70px;
-    left: 50%;
-    transform: translateX(-50%);
+    height: 62vh;
+    background-image: url(/wedding/src/assets/images/invatation_bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
     display: flex;
     flex-direction: column;
-    gap: 4px;
     align-items: center;
     justify-content: center;
-    z-index: 3;
-    animation: scrollFloat 1.6s ease-in-out infinite;
+    gap: 96px;
 }
 
-.hero_scroll_motion img {
-    width: 18px;
-    height: 18px;
-}
-
-.hero_scroll_motion p {
-    font-size: 14px;
-}
-
-@keyframes scrollFloat {
-    0% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(8px);
-    }
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-}
-
-.invitation .intro p {
-    line-height: 24px;
-    margin-bottom: 28px;
-}
-
-.invitation .intro span {
-    color: #8E8E8E;
-}
-
-.invitation .line {
-    width: 10vw;
-    height: 0.5px;
-    background-color: #d6d6d6;
-    margin: 80px 0;
+.intro {
+    text-align: center;
 }
 
 .name {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 4px;
 }
 
@@ -237,6 +179,14 @@ section h2 {
     font-size: 18px;
     font-weight: 700;
     margin-left: 12px;
+}
+
+.calendar {
+    margin-top: 92px;
+}
+
+.calendar p {
+    text-align: center;
 }
 
 .calendar strong {
@@ -272,7 +222,7 @@ section h2 {
 }
 
 .wedding {
-    color: #EF8700;
+    color: #1D6D23;
     flex-direction: column;
     font-weight: 600;
 }
@@ -326,6 +276,7 @@ section h2 {
 
 .countdown_text {
     margin-top: 14px;
+    text-align: center;
 }
 
 
@@ -471,13 +422,22 @@ section h2 {
 /* location */
 .location {
     margin-top: 120px;
-    padding: 0 20px;
+}
+
+.location_wrap {
+    width: 100%;
+    height: 86vh;
+    background-image: url(/wedding/src/assets/images/location_bg.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    padding: 40px;
 }
 
 .map_wrap {
+    margin-top: -16px;
     width: 100%;
-    height: 240px;
-    margin-top: 24px;
+    height: 160px;
     border-radius: 8px;
     overflow: hidden;
     background: #f3f0ea;
@@ -542,6 +502,10 @@ section h2 {
 .gift {
     margin-top: 120px;
     padding: 0 20px;
+}
+
+.gift p {
+    text-align: center;
 }
 
 .account {
@@ -743,5 +707,16 @@ section h2 {
 }
 
 .last_comment {
-    margin: 24px 0 40px;
+    width: 100%;
+    height: 165px;
+    background-image: url(/wedding/src/assets/images/footer.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    color: #fff;
+    font-size: 14px;
 }

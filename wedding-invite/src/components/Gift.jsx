@@ -1,10 +1,16 @@
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import arrowDown from "../assets/icons/arrow-down2.png";
 import arrowUp from "../assets/icons/arrow-up.png";
 import kakaoPay from "../assets/icons/kakaopay.png";
 import copyIcon from "../assets/icons/copy.png";
-import { useState } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Gift() {
+  const sectionRef = useRef(null);
   const [isManOpen, setIsManOpen] = useState(false);
   const [isWomanOpen, setIsWomanOpen] = useState(false);
 
@@ -33,8 +39,34 @@ function Gift() {
     window.open(link, "_blank");
   };
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        sectionRef.current,
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            // markers: true,
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="gift">
+    <section className="gift" ref={sectionRef}>
       <h2>A Gift of Love</h2>
       <p>
         멀리서도 축하의 마음을
