@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import locationBg from "../assets/images/location_bg.png";
 import tMap from "../assets/icons/tmap.png";
 import kakaoNav from "../assets/icons/kakao.png";
 import naverNav from "../assets/icons/naver.png";
@@ -166,7 +167,10 @@ function Location() {
     <section className="location" ref={sectionRef}>
       <h2>LOCATION</h2>
 
-      <div className="location_wrap">
+      <div
+        className="location_wrap"
+        style={{ backgroundImage: `url(${locationBg})` }}
+      >
         <div className="map_wrap">
           <div ref={mapContainerRef} className="kakao_map" />
         </div>

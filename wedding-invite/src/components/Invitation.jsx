@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import invitationBg from "../assets/images/invatation_bg.png";
 import Calendar from "../components/Calendar";
 import Countdown from "../components/Countdown";
 
@@ -59,7 +60,7 @@ function Invitation() {
 
   return (
     <section className="invitation" ref={sectionRef}>
-      <div className="invitation_txt" ref={inviteTxtRef}>
+      <div className="invitation_txt" ref={inviteTxtRef} style={{ backgroundImage: `url(${invitationBg})` }}>
         <div className="intro">
           <p>
             함께 보내는 여덟 번째 가을,

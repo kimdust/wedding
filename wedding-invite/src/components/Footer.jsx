@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import footerBg from "../assets/images/footer.png";
 import kakaoIcon from "../assets/icons/kakaopay.png";
 import copyIcon from "../assets/icons/copy.png";
 
@@ -100,7 +101,7 @@ function Footer() {
                 링크 복사하기
                 </button>
             </div>
-            <div className="last_comment">
+            <div className="last_comment" style={{ backgroundImage: `url(${footerBg})` }}>
                 축하해 주신 마음 잊지 않고 행복하게 잘 살겠습니다.
             </div>
         </section>
