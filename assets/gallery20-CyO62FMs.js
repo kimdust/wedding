@@ -1,0 +1,1 @@
+var e=`/wedding/assets/gallery20-CpvjFDXm.webp`;export{e as default};
